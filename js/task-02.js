@@ -6,10 +6,15 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-let ulList = document.getElementById("ingredients");
-const food = ingredients.forEach(ingredient => {
-  let items = document.createElement("li");
-  items.innerHTML = ingredient;
-  ulList.append(items);
-  items.setAttribute('class', 'item')
-});
+const ulList = document.getElementById("ingredients");
+
+const arr = []
+
+ingredients.forEach(ingredient => {
+	const item = document.createElement('li')
+	item.className = 'item'
+	item.textContent = ingredient
+	arr.push(item)
+})
+
+ulList.append(...arr)
